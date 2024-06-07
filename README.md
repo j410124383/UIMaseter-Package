@@ -1,30 +1,38 @@
-2024/05/07
+UI Master是为了让游戏开发者更能专注于游戏内容本身而制作的一体式UI框架。
+如果所有的游戏都有UI，那么不妨现将其做成“轮子”。
+使用这个框架来省去诸如“UI设计”“设置系统”“成就系统”等工作吧！
 
-更新v1.0版本
+## 操作准备
 
-一、主要功能：
+### 文本相关预设
 
-1.规范化通用panel的制作，规范UI层级树，做到最单位一次性修改。
+1. 导入TMP Essentials：Edit > Project Setting > Text Mesh Pro > Import TMP Essentials。
+    - 需要先安装TMP的预设。
+2. 富文本设置：
+    - 在Project Setting > TextMesh Pro > Settings中，将Default Sprite Asset替换为`SpriteAsset_Default`。
+    - 将Default Style Sheet替换为`StyleSheet_Default`。
+    - 将Default Font Asset替换为`NotoSansSC-Black SDF`文件。当然，后续可以根据项目需求替换为其他字体。
 
-2.写好了基本的setting功能，包括垂直同步、分辨率等常用需求，以及设置的存档。
+### 本地化相关预设
 
-3.基本的音效、配乐播放管理效果。
+1. 在Package Manager中安装Localization本地化插件。
+2. 在Project Setting > Localization中，将默认的本地化文件替换上去。
 
-4.button触发音效系统。
+### 输入系统相关预设
 
-4.panel转场丝滑动画、将资产量压缩到最小。
+1. 在Project Setting > Api Compatibility [Level中将替换为.NET](http://xn--level-9n1h5c952lqwojqi.net/) Framework。
+2. 将Active Input Handling替换为Input System Package。
+    - 我们使用新的控制系统来支持项目中的UI设置。
+    - 在Package Manager中安装Input System。
 
+### 渲染管线相关预设
 
-二、下一次更新：
+1. 在Package Manager中安装Universal RP（通用渲染管线）。
+2. 在Project Setting > URP Global Settings中，将已有的Rendering Asset资产拖拽进去。如果有问题，可以在该页面进行修复。
+    - 这套方案会与URP绑定，所以需要适配。如果不使用URP，需要在SettingManager中将Value命名空间相关的代码注释或删除。
 
-1.完善一些界面跳转的逻辑。
+### 建议操作
 
-2.追加setting对urp后处理更改的支持。
+1. 在Project Setting中，将Color Space改为Linear。这可能对游戏的美术效果有影响，为了确保最佳品质。
 
-3.追加异步加载功能。
-
-4.集成steam成就系统。
-
-5.追加排行榜功能。
-
-6.提供更多的转场动画选择。
+[UI Master官网](https://uimaster.vercel.app/)
